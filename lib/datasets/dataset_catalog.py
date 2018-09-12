@@ -28,8 +28,8 @@ from core.config import cfg
 _DATA_DIR = cfg.DATA_DIR
 
 # Required dataset entry keys
-IM_DIR = 'image_directory'
-ANN_FN = 'annotation_file'
+IM_DIR = ''
+ANN_FN = ''
 
 # Optional dataset entry keys
 IM_PREFIX = 'image_prefix'
@@ -216,5 +216,18 @@ DATASETS = {
             _DATA_DIR + '/VOC2012/annotations/voc_2012_trainval.json',
         DEVKIT_DIR:
             _DATA_DIR + '/VOC2012/VOCdevkit2012'
-    }
+    },
+    'brain_hole_v1': {
+        'imgs_num': 2800,
+        IM_DIR:
+             _DATA_DIR,
+        ANN_FN:
+            '/core1/data/home/liuhuawei/data-manager/data/cx_brain_hole/coco_cx_brain_hole_v1_train_new.json',
+    },
+    'coco_brain_hole_v1_val': {
+        IM_DIR:
+             _DATA_DIR,
+        ANN_FN:
+            '/core1/data/home/liuhuawei/data-manager/data/cx_brain_hole/coco_cx_brain_hole_v1_test_new.json',
+    },
 }

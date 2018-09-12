@@ -20,7 +20,7 @@ import utils.net as net_utils
 class mask_rcnn_outputs(nn.Module):
     """Mask R-CNN specific outputs: either mask logits or probs."""
     def __init__(self, dim_in):
-        super().__init__()
+        super(mask_rcnn_outputs, self).__init__()
         self.dim_in = dim_in
 
         n_classes = cfg.MODEL.NUM_CLASSES if cfg.MRCNN.CLS_SPECIFIC_MASK else 1
@@ -142,7 +142,7 @@ def mask_rcnn_fcn_head_v1up(dim_in, roi_xform_func, spatial_scale):
 class mask_rcnn_fcn_head_v1upXconvs(nn.Module):
     """v1upXconvs design: X * (conv 3x3), convT 2x2."""
     def __init__(self, dim_in, roi_xform_func, spatial_scale, num_convs):
-        super().__init__()
+        super(mask_rcnn_fcn_head_v1upXconvs, self).__init__()
         self.dim_in = dim_in
         self.roi_xform = roi_xform_func
         self.spatial_scale = spatial_scale
@@ -206,7 +206,7 @@ class mask_rcnn_fcn_head_v1upXconvs(nn.Module):
 class mask_rcnn_fcn_head_v1upXconvs_gn(nn.Module):
     """v1upXconvs design: X * (conv 3x3), convT 2x2, with GroupNorm"""
     def __init__(self, dim_in, roi_xform_func, spatial_scale, num_convs):
-        super().__init__()
+        super(mask_rcnn_fcn_head_v1upXconvs_gn, self).__init__()
         self.dim_in = dim_in
         self.roi_xform = roi_xform_func
         self.spatial_scale = spatial_scale
@@ -278,7 +278,7 @@ class mask_rcnn_fcn_head_v0upshare(nn.Module):
     v0upshare design: conv5, convT 2x2.
     """
     def __init__(self, dim_in, roi_xform_func, spatial_scale):
-        super().__init__()
+        super(mask_rcnn_fcn_head_v0upshare, self).__init__()
         self.dim_in = dim_in
         self.roi_xform = roi_xform_func
         self.spatial_scale = spatial_scale
@@ -345,7 +345,7 @@ class mask_rcnn_fcn_head_v0upshare(nn.Module):
 class mask_rcnn_fcn_head_v0up(nn.Module):
     """v0up design: conv5, deconv 2x2 (no weight sharing with the box head)."""
     def __init__(self, dim_in, roi_xform_func, spatial_scale):
-        super().__init__()
+        super(mask_rcnn_fcn_head_v0up, self).__init__()
         self.dim_in = dim_in
         self.roi_xform = roi_xform_func
         self.spatial_scale = spatial_scale
@@ -406,7 +406,7 @@ def ResNet_roi_conv5_head_for_masks(dim_in):
 class mask_rcnn_fcn_head_v1upXconvs_gn_adp(nn.Module):
     """v1upXconvs design: X * (conv 3x3), convT 2x2, with GroupNorm"""
     def __init__(self, dim_in, roi_xform_func, spatial_scale, num_convs):
-        super().__init__()
+        super(mask_rcnn_fcn_head_v1upXconvs_gn_adp, self).__init__()
         self.dim_in = dim_in
         self.roi_xform = roi_xform_func
         self.spatial_scale = spatial_scale
@@ -490,7 +490,7 @@ class mask_rcnn_fcn_head_v1upXconvs_gn_adp(nn.Module):
 class mask_rcnn_fcn_head_v1upXconvs_gn_adp_ff(nn.Module):
     """v1upXconvs design: X * (conv 3x3), convT 2x2, with GroupNorm"""
     def __init__(self, dim_in, roi_xform_func, spatial_scale, num_convs):
-        super().__init__()
+        super(mask_rcnn_fcn_head_v1upXconvs_gn_adp_ff, self).__init__()
         self.dim_in = dim_in
         self.roi_xform = roi_xform_func
         self.spatial_scale = spatial_scale
